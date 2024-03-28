@@ -7,7 +7,7 @@ pipeline {
     stage('Git checkout') {
       steps {
          echo 'This is for cloning the gitrepo'
-         git branch: 'main', url: 'https://github.com/cbabu85/InsureMe-20Mar.git'
+         git branch: 'main', url: 'https://github.com/Ramala12/InsureMe-20Mar.git'
                           }
             }
     stage('Create a Package') {
@@ -24,7 +24,7 @@ pipeline {
             }
     stage('Create a Docker image from the Package Insure-Me.jar file') {
       steps {
-        sh 'docker build -t cbabu85/insure-me-app:4.0 .'
+        sh 'docker build -t dineshreddyramala/insure_project1:1.0 .'
                     }
             }
     stage('Login to Dockerhub') {
@@ -36,7 +36,7 @@ pipeline {
             }
     stage('Push the Docker image') {
       steps {
-        sh 'docker push cbabu85/insure-me-app:4.0'
+        sh 'docker push dineshreddyramala/insure_project1:1.0'
                                 }
             }
     stage('Ansbile config and Deployment') {
