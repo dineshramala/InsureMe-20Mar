@@ -35,7 +35,7 @@ pipeline{
       }
    stage('docker push the image'){
      steps{
-     sh 'dpcker push dineshreddyramala/insureme3:2.0'
+     sh 'docker push dineshreddyramala/insureme3:2.0'
                }
    }
 
