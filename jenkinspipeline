@@ -23,7 +23,7 @@ pipeline{
         }
   stage('build the docker image by using package insureme.jar file'){
     steps{
-      sh 'docker build -t 8080:8081 dineshreddyramala/insureme3:2.0 .'
+      sh 'docker build -t dineshreddyramala/insureme3:2.0 .'
                       }
    }
    
