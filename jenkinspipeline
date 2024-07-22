@@ -26,6 +26,19 @@ pipeline{
       sh 'docker build -t dineshreddyramala/insureme3:2.0 .'
                       }
    }
+  stage('login into dockerhub') {
+    steps{
+    withCredentials([usernamePassword(credentialsId: 'dockerlogin', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
+    sh 'docker login -u ${dockeruser} -p ${dockerpass}'
+                 }
+           }
+      }
+   stage('docker push the image'){
+     steps{
+     sh 'dpcker push dineshreddyramala/insureme3:2.0'
+               }
+   }
+
    
 }
 }
